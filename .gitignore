@@ -1,0 +1,6 @@
+﻿.vscode
+.vs
+obj/
+bin/
+*.*.user
+*.Development.json
