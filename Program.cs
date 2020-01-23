@@ -1,11 +1,11 @@
 ﻿using System;
 
 using System.IO;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 namespace sqlaudit_runner
 {
@@ -43,22 +43,18 @@ namespace sqlaudit_runner
               .Build();
 
             // add logging
-            serviceCollection.AddLogging(logging =>
+            serviceCollection.AddLogging(builder =>
             {
-                logging.ClearProviders();
-                logging.AddConsole();
-                logging.AddDebug();
+                builder.AddConsole();
+                builder.AddDebug();
             });
- 
+
             // Add Config
             serviceCollection.AddSingleton<IConfiguration>(configuration);
             serviceCollection.AddOptions();
             // add app
-            serviceCollection.AddTransient<SqlAuditor>();
-
-             
+            serviceCollection.AddTransient<SqlAuditor>();     
             Console.WriteLine("\nSqlAuditor Loaded.");
-            
         }
 
     }
