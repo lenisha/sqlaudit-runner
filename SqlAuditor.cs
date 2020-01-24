@@ -10,7 +10,7 @@ namespace sqlaudit_runner
 {
     public class SqlAuditor
     {
-        protected  const string LOG_TYPE = "EncryprionExceptions";
+        protected  const string LOG_TYPE = "EncryptionExceptions";
         ILogger _Logger;
         IConfiguration _Config;
         
