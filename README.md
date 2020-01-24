@@ -96,6 +96,6 @@ sqlauditor-1579828020-wkhhv     0/1     ContainerCreating   0          2s
 
 View custom Logs in the Workspace, LogType = `EncryptionExceptions_CL`
 
-![docs](./LogAnalytics.png)
+![docs](./docs/LogAnalytics.png)
 
 ## Sentinel
